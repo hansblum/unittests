@@ -4,9 +4,15 @@ module.exports = {
 
 function MailClient() {
 
-	function sendMail(data) {
-	    console.log('This function should not be included in a unit test because it is very slow. And has dependencies on connections');
-    }	
+	this.send = _send;
+
+	function _send (data) {
+	    doNothing('This function an not be included in a unit test because it depends on a service that might not be available.');
+    }
+
+    function doNothing(message) {
+    	return message;
+    }
     
 }
 

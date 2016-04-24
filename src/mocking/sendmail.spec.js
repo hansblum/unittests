@@ -22,14 +22,14 @@ describe('Unit tests for the sendMail function', function() {
 	});
 
 	describe('', function() {
-		var mock = require('mock-require');
-		var mailSent = false;
 		var sinon = require('sinon');
-		var mockMailClient = sinon.mock()
+		var sendFunction;
 
-		beforeEach(function() {
-			mailSent = false;
+
+		before(function() {
+			this.sendFunction = sinon.spy(sendmail.getMailClient(), 'send');
 		});
+
 
 		it('does not send the message when there is no email address', function() {
 			var data = {
@@ -37,7 +37,7 @@ describe('Unit tests for the sendMail function', function() {
 				body: 'We\'re building a roller coaster.'
 			}; 
 			sendmail.sendMail(data);
-			expect(mailSent).not.to.be.ok;
+			expect(this.sendFunction).not.to.be.called;
 		});
 
 		it('does not send the message when there is no subject', function() {
@@ -46,7 +46,7 @@ describe('Unit tests for the sendMail function', function() {
 				body: 'Hallo Hansje'
 			}; 
 			sendmail.sendMail(data);
-			expect(mailSent).not.to.be.ok;
+			expect(this.sendFunction).not.to.be.called;
 		});
 
 		it('sends the email', function() {
@@ -56,7 +56,7 @@ describe('Unit tests for the sendMail function', function() {
 				body: 'Dear Onkel X,\n Let\'s have lunch on tuesday.'
 			}; 
 			sendmail.sendMail(data);
-			expect(mailSent).to.be.ok;
+			expect(this.sendFunction).to.be.called;
 		});
 	});
 });

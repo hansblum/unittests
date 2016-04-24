@@ -1,6 +1,7 @@
 (function () {
 	module.exports = { sendMail : sendMail, 
-					   isValidEmailAddress: isValidEmailAddress };
+					   isValidEmailAddress: isValidEmailAddress, 
+					   getMailClient: getMailClient };
 
 	var client = require('./mailclient.js');
 	var mailclient = new client.MailClient();
@@ -17,7 +18,7 @@
 	function sendMail(data) {
 		if (data && data.emailAddress && data.subject) {
 			if (isValidEmailAddress(data.emailAddress)) {
-				mailclient.sendMail({
+				mailclient.send({
 					to : data.emailAddress,
 					from: config.from,
 					subject: data.subject,
@@ -31,4 +32,9 @@
 		var regex = /^[a-z0-9\-_]+(\.[a-z0-9\-_]+)*@[a-z0-9\-\_]+(\.[a-z0-9\-\_]+)*$/;
 		return regex.test(emailAddress);
 	}
+
+	function getMailClient() {
+		return mailclient;
+	}
+
 })();
