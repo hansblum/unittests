@@ -21,7 +21,7 @@ describe('Unit tests for the sendMail function', function() {
 		});
 	});
 
-	describe('', function() {
+	describe('When should it, and when should it not, send the message', function() {
 		var sinon = require('sinon');
 		var sendFunction;
 
@@ -40,6 +40,17 @@ describe('Unit tests for the sendMail function', function() {
 			expect(this.sendFunction).not.to.be.called;
 		});
 
+		it ('does not send the message when the email address is invalid', function() {
+			var data = {
+				emailAddress: 'billy.shakes',
+				subject: 'Much ado about nothing', 
+				body: 'look it up in wikipedia.'
+			}
+			sendmail.sendMail(data);
+			expect(this.sendFunction).not.to.be.called;
+
+		});
+
 		it('does not send the message when there is no subject', function() {
 			var data = {
 				emailAddress: 'hansje@familieknots.nl',
@@ -49,7 +60,7 @@ describe('Unit tests for the sendMail function', function() {
 			expect(this.sendFunction).not.to.be.called;
 		});
 
-		it('sends the email', function() {
+		it('sends the email when the email address is correct and there is a subject.', function() {
 			var data = {
 				emailAddress: 'onkel.x@familieknots.nl',
 				subject: 'Lunch',
