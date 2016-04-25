@@ -42,10 +42,10 @@ describe('Unit tests for the sendMail function', function() {
 
 		it ('does not send the message when the email address is invalid', function() {
 			var data = {
-				emailAddress: 'billy.shakes',
-				subject: 'Much ado about nothing', 
-				body: 'look it up in wikipedia.'
-			}
+				emailAddress: 'phineas',
+				subject: 'Watcha Doing.',
+				body: 'We\'re building a roller coaster.'
+			}; 
 			sendmail.sendMail(data);
 			expect(this.sendFunction).not.to.be.called;
 
@@ -53,18 +53,18 @@ describe('Unit tests for the sendMail function', function() {
 
 		it('does not send the message when there is no subject', function() {
 			var data = {
-				emailAddress: 'hansje@familieknots.nl',
-				body: 'Hallo Hansje'
-			}; 
+				emailAddress: 'hans.blum@capgemini.com',
+				body: 'Hello Hans,\n\n Let\'s have lunch on tuesday.'
+			}; 	
 			sendmail.sendMail(data);
 			expect(this.sendFunction).not.to.be.called;
 		});
 
 		it('sends the email when the email address is correct and there is a subject.', function() {
 			var data = {
-				emailAddress: 'onkel.x@familieknots.nl',
+				emailAddress: 'hans.blum@capgemini.com',
 				subject: 'Lunch',
-				body: 'Dear Onkel X,\n Let\'s have lunch on tuesday.'
+				body: 'Hello Hans,\n\n Let\'s have lunch on tuesday.'
 			}; 
 			sendmail.sendMail(data);
 			expect(this.sendFunction).to.be.called;
