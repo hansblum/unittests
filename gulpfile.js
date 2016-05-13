@@ -3,7 +3,7 @@ var gulp=require('gulp'),
     istanbul=require('gulp-istanbul');
 
 gulp.task('pre-test', function () {
-  return gulp.src(['src/**/*.js'])
+  return gulp.src(['src/**/*.js', '!src/**/*.spec.js'])
     // Covering files
     .pipe(istanbul())
     // Force `require` to return covered files
@@ -16,5 +16,5 @@ gulp.task('test', ['pre-test'], function() {
 		.src(['src/**/*.spec.js','src/**/*.js'])
 		.pipe(mocha())
     .pipe(istanbul.writeReports())
-    .pipe(istanbul.enforceThresholds({thresholds: {global: 100}}));
+    .pipe(istanbul.enforceThresholds({thresholds: {global: 80}}));
 });
