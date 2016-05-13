@@ -16,5 +16,8 @@ describe('Hello World multilanguage test', function() {
 	it('gives \'Hello world!\' when no language given.', function() {
 		expect(helloworld.helloWorld()).to.equal('Hello world!');
 	});
+	it('gives \'Hello world!\' when unknown language given.', function() {
+		expect(helloworld.helloWorld('po')).to.equal('Hello world!');
+	});
 
 })

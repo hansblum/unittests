@@ -9,11 +9,11 @@ function MovieNightApi(movieNight) {
 
 	var self = this;
 	self.movieNight = movieNight; 
-	self.addMovieNight = _addMovieNight;
+	self.addMovieNight = addMovieNight;
 	self.isValidMovieNight = _isValidMovieNight;
 	self.createMovieNight = _createMovieNight;
 
-	function _addMovieNight() {
+	function addMovieNight() {
 		if (self.isValidMovieNight()) {
 			self.createMovieNight(
 				movieNight.date, 
@@ -33,16 +33,12 @@ function MovieNightApi(movieNight) {
 		var result = false;
 		if (date && typeof date === 'string') {
 			var nDate = Date.parse(date);
-			console.log('', date, ' is ', nDate); 
 			result = (nDate !== NaN);
 		}
 		return result;
 	}
 
 	function _createMovieNight() {
-		var result = new MovieNight();
-		result.date = self.movieNight.date;
-		result.movieTitle = self.movieNight.movieTitle;
-		return result;
+		console.log('do whatever is needed to store the movieNight');
 	}
 }

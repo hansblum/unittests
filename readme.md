@@ -24,7 +24,7 @@ hello.spec.js
 		});
 	});
 ```
-Now execute 'gulp mocha' to execute the test.
+Now execute 'gulp test' to execute the test.
 ```
     D:\POLAR\workspaces\polar>gulp mocha
     [09:01:41] Using gulpfile D:\POLAR\workspaces\polar\gulpfile.js

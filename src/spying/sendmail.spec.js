@@ -19,12 +19,11 @@ describe('Unit tests for the sendMail function', function() {
 		it ('rejects an email address with multiple @', function() {
 			expect(sendmail.isValidEmailAddress('a@b@c.de')).not.to.be.ok;
 		});
+
 	});
 
 	describe('When should it, and when should it not, send the message', function() {
 		var sinon = require('sinon');
-		var sendFunction;
-
 
 		before(function() {
 			this.sendFunction = sinon.spy(sendmail.getMailClient(), 'send');

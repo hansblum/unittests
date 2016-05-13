@@ -11,6 +11,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
+    "gulp-istanbul": "^0.10.4",
     "gulp-mocha": "^2.2.0",
     "karma": "^0.13.22",
     "karma-coverage": "^0.5.5",
