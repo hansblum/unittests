@@ -22,5 +22,7 @@
     "phantomjs-prebuilt": "^2.1.7",
     "sinon": "^1.17.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "mongoose": "^4.4.17"
+  }
 }
