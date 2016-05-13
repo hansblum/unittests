@@ -1,6 +1,4 @@
-# Gulpfile documentation
-
-## documentation about this gulpfile.js
+## Gulpfile documentation
 
 ### Requiring dependencies
 
