@@ -27,6 +27,8 @@ gulp.task('pre-test', function () {
     .pipe(istanbul.hookRequire());
 });
 ```
+Exclude your *.spec.js files from this, or they will influence your code coverage.
+
 
 ### Running the tests
 

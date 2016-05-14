@@ -2,7 +2,7 @@
   "name": "unittests",
   "version": "1.0.0",
   "description": "A sample app for unit test presentation",
-  "main": "index.js",
+  "license": "MIT",
   "scripts": {
     "test": "test"
   },
@@ -13,12 +13,7 @@
     "gulp": "^3.9.1",
     "gulp-istanbul": "^0.10.4",
     "gulp-mocha": "^2.2.0",
-    "karma": "^0.13.22",
-    "karma-coverage": "^0.5.5",
-    "karma-mocha": "^0.2.2",
-    "karma-phantomjs-launcher": "^1.0.0",
     "mocha": "^2.4.5",
-    "mock-require": "^1.2.1",
     "phantomjs-prebuilt": "^2.1.7",
     "sinon": "^1.17.3"
   },
