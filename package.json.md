@@ -18,10 +18,14 @@ After you cloned this repository with `git clone https://github.com/hansblum/uni
 Explanation of the commands:
 
  `git clone https://github.com/hansblum/unittests`  Clone the repository to your local computer.
+
  `cd unittests`  Go into the workspace folder.
+
  `npm install`  Download all dependencies and build the node module.
+
  `npm test`  Run the tests.
  
+
 
 ```
 {
